@@ -1,0 +1,16 @@
+
+
+<div class="imgcontainer">
+    <h1 >{{title}}</h1>
+  </div>
+
+  <div class="container">
+    
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn" (click)="clickAdd()">+</button>
+    <button type="button" class="cancelbtn" (click)="clickSub()">-</button>
+    <input type="text"[(ngModel)]="count">
+    <span class="psw">Count : {{count}} </span>
+  </div>

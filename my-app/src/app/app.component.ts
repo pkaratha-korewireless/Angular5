@@ -10,9 +10,19 @@ export class AppComponent {
   title = 'Me@Home';
   count = 0;
   clickAdd(){
-    this.count = this.count+1;
+    if(!isNaN(this.count)){
+      this.count = Number(this.count)+1;
+    }
+    else{
+      alert("Please Enter a number");
+    }
   }
   clickSub(){
-    this.count = this.count-1;
+    if(!isNaN(this.count)){
+      this.count = this.count-1;
+    }
+    else{
+      alert("Please Enter a number");
+    }
   }
 }

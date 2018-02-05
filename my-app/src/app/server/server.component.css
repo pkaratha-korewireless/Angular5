@@ -4,13 +4,36 @@ h1 {
     
     font-size: 250%;
   }
-div{
-    background-color:  lightblue;
-    color: #883139;
-    font-size: 150%;
-}
+
 .online{
-    color: 'white';
+    color: #2af913;
+    width:25%;
+    height:25%;
+    padding:20px;
+    border-radius:100%;
+    border-style: solid;
+    border-color: #c1dbde;
+    animation-name: online;
+    animation-duration: 5s;
+}
+@keyframes online {
+    from{color: #151814; background: #A3CEED; border-color:#A3CEED;}
+    to {color: #2af913; background: linear-gradient(black, #d2eff2);border-color: #c1dbde}
+}
+.offline{
+    color: #fba15f;
+    width:25%;
+    height:25%;
+    padding:20px;
+    border-radius:100%;
+    border-style: solid;
+    border-color: #e0c2c8;
+    animation-name: offline;
+    animation-duration: 5s;    
+}
+@keyframes offline {
+    from{color: #151814; background: #A3CEED; border-color:#A3CEED;}
+    to {color: #fba15f; background: linear-gradient(black, #f1d1d7);border-color: #e0c2c8}
 }
 /* Bordered form */
 form {
@@ -29,13 +52,13 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
+    background-color: #A3CEED;
     color: white;
-    padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 10px;
 }
 
 /* Add a hover effect for buttons */

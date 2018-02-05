@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Me@Home';
+  title = 'Server Home';
   count = 0;
   clickAdd(){
     if(!isNaN(this.count)){

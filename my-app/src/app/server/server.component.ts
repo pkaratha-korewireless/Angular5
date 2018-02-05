@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,Input} from '@angular/core';
 
 @Component({
     selector: 'app-server',
@@ -6,8 +6,10 @@ import {Component} from '@angular/core';
     styleUrls: ['./server.component.css']
 })
 export class ServerComponent{
-    serverId = 10;
-    serverStatus = 'online';
+    serverStatus = '';
+    statuses : string[] =[];
+    laststatus = null;
+    @Input() id: number;
     getServerStatus(){
         return this.serverStatus;
     }
@@ -15,20 +17,6 @@ export class ServerComponent{
         this.serverStatus = Math.random() > .5 ? 'online': 'offline';
     }
     getColor(){
-       return this.serverStatus == 'online' ? 'green' : 'red';
+       return this.serverStatus == 'online' ? 'linear-gradient(black, #d2eff2)' : 'linear-gradient(black,#f1d1d7)';
     }
-    userName = "Priyesh K";
-    statuses : string[] =[];
-    date = new Date().toDateString();
-    updateStatus(){
-        if(this.laststatus !=null){
-            this.statuses.push(this.laststatus);
-            this.laststatus = null;
-        }
-        else{
-            alert("Please Enter Status..!!!");
-        }
-        
-    };
-    laststatus = null;
 }

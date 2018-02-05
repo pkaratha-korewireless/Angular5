@@ -1,8 +1,2 @@
-<!--<h2 class="container">Welcome To Me@Home</h2>
-<input type="text" name="Hello" id=""[(ngModel)]="laststatus">
-<button type="button" class="cancelbtn" (click)="updateStatus()">Update</button>
-<ul>
-    <li *ngFor = "let a of statuses">{{userName}} updated on {{date}} : {{a}}</li>
-    
-</ul>-->
-<p [ngStyle]="{backgroundColor :getColor()}" [ngClass]="{online: serverStatus == 'online'}">{{'Server'}} with ID {{serverName}} is {{serverStatus}}</p>
+
+<div class="col-xs-2" [ngStyle]="{background :getColor()}" [ngClass]="{'online': serverStatus === 'online','offline': serverStatus === 'offline'}">{{'Server'}} with ID {{id+1}} is {{serverStatus}}</div>

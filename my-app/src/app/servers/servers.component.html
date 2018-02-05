@@ -1,15 +1,28 @@
-<label>Server Name</label>
-<!--<input type="text" (input)="onUpdateServerName($event)">-->
-<input type="text" [(ngModel)]="serverName">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+<input type="text" [(ngModel)]="serverName" placeholder="Server Name">
+</div>
+</div>
+<div class="row">
+        <div class="col-md-6">
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click) = "onCreateServer()">Add Server</button>
-<p *ngIf="serverCreated; else noServer">{{serverName}} Server is created</p>
+</div>
+<div class="col-md-6">
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click) = "onRemoveServer()">Remove Server</button>
+</div>
+</div>
+<div class="row">
+        <div class="col-md-12">
+<p *ngIf="serverCreated; else noServer">{{serverName}} Server is created </p>
 <ng-template #noServer>
-    <p>No Server Created!!!</p>
+    <p>Server is Removed</p>
 </ng-template>
-
-<!--<p></p>
-<p>Server With ID {{serverId}}   is {{serverStatus}}  </p>
-<p>Server With ID {{serverId}}   is {{getServerStatus()}}  </p>
-<p [innerText]="allowNewServer"></p>
-<p>{{allowNewServer}}</p>-->
-<app-server *ngFor = "let server of servers"></app-server>
+</div>
+</div>
+</div>
+<div class="container-fluid" style="background-color:#f1f1f1">
+        <div class="row">
+<app-server *ngFor = "let server of servers ; let i = index" [id]=i></app-server>
+        </div>
+</div>

@@ -6,7 +6,7 @@ h1 {
   }
 
 .online{
-    color: #2af913;
+    color: black;
     width:25%;
     height:25%;
     padding:20px;
@@ -17,11 +17,11 @@ h1 {
     animation-duration: 5s;
 }
 @keyframes online {
-    from{color: #151814; background: #A3CEED; border-color:#A3CEED;}
-    to {color: #2af913; background: linear-gradient(black, #d2eff2);border-color: #c1dbde}
+    from{color: #E3E9E0; background: #ABF0A0; border-color:#DFF1D8;}
+    to {color: #0C0C0B; background: linear-gradient(#97EE67, #0EEF65);border-color: #2CF720}
 }
 .offline{
-    color: #fba15f;
+    color: white;
     width:25%;
     height:25%;
     padding:20px;
@@ -32,8 +32,8 @@ h1 {
     animation-duration: 5s;    
 }
 @keyframes offline {
-    from{color: #151814; background: #A3CEED; border-color:#A3CEED;}
-    to {color: #fba15f; background: linear-gradient(black, #f1d1d7);border-color: #e0c2c8}
+    from{color: #111110; background: #F16786; border-color:#F3F0F0;}
+    to {color: #F4EEEE; background: linear-gradient(#F15151, #FA0A0E);border-color: #EE0332}
 }
 /* Bordered form */
 form {

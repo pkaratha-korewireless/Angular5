@@ -17,6 +17,6 @@ export class ServerComponent{
         this.serverStatus = Math.random() > .5 ? 'online': 'offline';
     }
     getColor(){
-       return this.serverStatus == 'online' ? 'linear-gradient(black, #d2eff2)' : 'linear-gradient(black,#f1d1d7)';
+       return this.serverStatus == 'online' ? 'linear-gradient(#97EE67, #0EEF65)' : 'linear-gradient(#F15151, #FA0A0E)';
     }
 }

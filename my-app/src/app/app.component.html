@@ -1,25 +1,27 @@
 <div class="container">
-      <div class="row">
-          <div class="col-md-12">
-  
-      <h3>{{title}}</h3>
-          </div>
-      </div>
+    <div class="row">
+        <div class="col-md-12">
+
+            <h3>{{title}}</h3>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-1">
             <button type="button" class="cancelbtn" (click)="clickSub()">-</button>
-              </div>
-      <div class="col-md-10">
-          <input type="text" [(ngModel)]="count" style="text-align: center">
         </div>
-        <div class="col-md-1" >
-            <button type="button" class="plusbtn" (click)="clickAdd()">+</button>          
+        <div class="col-md-10">
+            <input type="text" [(ngModel)]="count" style="text-align: center">
         </div>
-  </div>
-    <span class="psw">Count : {{count}} </span>
-  </div>
-    <div  class="container">
-        <app-servers></app-servers>
-        
+        <div class="col-md-1">
+            <button type="button" class="plusbtn" (click)="clickAdd()">+</button>
+        </div>
     </div>
-    
+    <span class="psw">Count : {{count}} </span>
+</div>
+<div class="container">
+    <app-servers></app-servers>
+
+</div>
+<div class="container">
+    <app-status></app-status>
+</div>

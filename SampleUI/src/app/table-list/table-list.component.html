@@ -1,0 +1,156 @@
+<div class="main-content atoll-content">
+    <div class="row">
+        <div class="col-xs-9">
+            <h5>Die Details</h5>
+        </div>
+        <div class="col-xs-3">
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 1.2vw!important">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <p>{{global.selectedPeriod}}
+                            <span class="caret"></span>
+                        </p>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let item of global.dropdownPeriods">
+                            <a *ngIf="global.selectedPeriod != item" (click)="selectSortPeridDropdown(item)">{{item}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section table-section">
+        <div class="container-fluid container-fluid-atoll">
+            <div id="menu" class="row atolltab">
+                <ul id="maintab" class="nav nav-tabs" role="tablist">
+                    <li id="itemprod" class="nav-item atol_tab">
+                        <a class="nav-link active " href="#production" role="tab" data-toggle="tab" (click)=change1()>
+                            <p class="text-primary">{{global.totalproduction}}
+                                <span class="badge" *ngIf="isProdAdded">{{global.totalproduction}} Added</span>
+                                <br>
+                                <label>Production</label>
+                            </p>
+                        </a>
+                    </li>
+
+                    <li id="itemstore" class="nav-item atol_tab">
+                        <a class="nav-link" href="#storage" role="tab" data-toggle="tab" (click)=change3()>
+                            <p class="text-primary">{{global.totalStorage}}
+                                <span class="badge" *ngIf="isStorageAdded">{{global.totalStorage}} Added</span>
+                                <br>
+                                <label>Storage</label>
+                            </p>
+                        </a>
+                    </li>
+                    <li id="itemrepair" class="nav-item atol_tab">
+                        <a class="nav-link" href="#repair" role="tab" data-toggle="tab" (click)=change2()>
+                            <p class="text-primary">{{global.totalRepair}}
+                                <span class="badge" *ngIf="isRepairAdded">{{global.totalRepair}} Added</span>
+                                <br>
+                                <label>Repair</label>
+                            </p>
+                        </a>
+                    </li>
+                    <li id="itemmissing" class="nav-item atol_tab">
+                        <a class="nav-link" href="#missing" role="tab" data-toggle="tab" (click)=change4()>
+                            <p class="text-primary">{{global.totalMissing}}
+                                <span class="badge" *ngIf="isMissingAdded">{{global.totalMissing}} Added</span>
+                                <br>
+                                <label>Missing</label>
+                            </p>
+                        </a>
+                    </li>
+                    <li id="itemunassigned" class="nav-item atol_tab">
+                        <a class="nav-link active " href="#unassigned" role="tab" data-toggle="tab" (click)=change5()>
+                            <p class="text-primary">{{global.totalunassigned}}
+                                <span class="badge" *ngIf="isProdAdded">{{global.totalunassigned}} Added</span>
+                                <br>
+                                <label>Unassigned</label>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" style="line-height: 0">
+                <div class="row" *ngIf="global.totalCount > 0">
+                    <div class="row" style="margin-left: 3%;margin-top:1%;">
+                        <div style="font-size: 2vh;font-weight: 400">
+                            <p *ngIf="selectedTab == 1" [ngStyle]="{'margin': '0%'}">{{global.totalproduction}}/{{global.totalCount}}</p>
+                            <p *ngIf="selectedTab == 2" [ngStyle]="{'margin': '0%'}">{{global.totalStorage}}/{{global.totalCount}}</p>
+                            <p *ngIf="selectedTab == 3" [ngStyle]="{'margin': '0%'}">{{global.totalRepair}}/{{global.totalCount}}</p>
+                            <p *ngIf="selectedTab == 4" [ngStyle]="{'margin': '0%'}">{{global.totalMissing}}/{{global.totalCount}}</p>
+                            <p *ngIf="selectedTab == 5" [ngStyle]="{'margin': '0%'}">{{global.totalunassigned}}/{{global.totalCount}}</p>
+                        </div>
+                    </div>
+                    <div class="row" style="width: 94%;margin-left: 3%;margin-top:1%;margin-right: 3%!important;height:7px">
+                        <div class="progress-bar click-progress" role="progressbar" [ngStyle]="{ background: prodColor, width: global.prodPercent}"
+                            href="#production" role="tab" data-toggle="tab" (click)=change1()>
+                        </div>
+                        <div class="progress-bar click-progress" role="progressbar" [ngStyle]="{background: storecolor,width: global.storePercent}"
+                            href="#storage" role="tab" data-toggle="tab" (click)=change3()>
+                        </div>
+                        <div class="progress-bar click-progress" role="progressbar" [ngStyle]="{background: storecolor,width: global.repPercent}"
+                            href="#repair" role="tab" data-toggle="tab" (click)=change2()>
+                        </div>
+                        <div class="progress-bar click-progress" role="progressbar" [ngStyle]="{background: missingColor,width: global.missingPercent}"
+                            href="#missing" role="tab" data-toggle="tab" (click)=change4()>
+                        </div>
+                        <div class="progress-bar click-progress" role="progressbar" [ngStyle]="{background: unassColor,width: global.unUsPercent}"
+                            href="#unassigned" role="tab" data-toggle="tab" (click)=change5()>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row section-data">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane" id="mapView">
+                        <app-maps [selectedTab]="selectedTab">
+                            <div class="row atollsearchrow">
+                                <button type="button" class="btn btn-sm navbar-right atollbutton" attr.href="{{returnURL()}}" role="tab" data-toggle="tab" style="margin-right: 1vw">List View</button>
+                            </div>
+                        </app-maps>
+                    </div>
+                    <div role="tabpanel" class="tab-pane active" id="production">
+                        <app-production-list>
+                            <div class="row atollsearchrow">
+                                <button type="button" class="btn btn-sm atollbutton" data-toggle="collapse" data-target="#searchprod">Search</button>
+                                <button type="button" class="btn btn-sm navbar-right atollbutton" href="#mapView" role="tab" data-toggle="tab"> Map View</button>
+                            </div>
+                        </app-production-list>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="repair">
+                        <app-repair-list>
+                            <div class="row atollsearchrow">
+                                <button type="button" class="btn btn-sm atollbutton" data-toggle="collapse" data-target="#searchrepair">Search</button>
+                                <button type="button" class="btn btn-sm navbar-right atollbutton" href="#mapView" role="tab" data-toggle="tab">Map View</button>
+                            </div>
+                        </app-repair-list>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="storage">
+                        <app-storage-list>
+                            <div class="row atollsearchrow">
+                                <button type="button" class="btn btn-sm atollbutton" data-toggle="collapse" data-target="#searchstorage">Search</button>
+                                <button type="button" class="btn btn-sm navbar-right atollbutton" href="#mapView" role="tab" data-toggle="tab">View Map</button>
+                            </div>
+                        </app-storage-list>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="missing">
+                        <app-missing-list [selectodPeriod]="periodSelected">
+                            <div class="row atollsearchrow">
+                                <button type="button" class="btn btn-sm atollbutton" data-toggle="collapse" data-target="#searchmissing">Search</button>
+                            </div>
+                        </app-missing-list>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="unassigned">
+                        <app-unassigned-list [selectodPeriod]="periodSelected">
+                            <div class="row atollsearchrow">
+                                <button type="button" class="btn btn-sm atollbutton" data-toggle="collapse" data-target="#searchunassigned">Search</button>
+                            </div>
+                        </app-unassigned-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

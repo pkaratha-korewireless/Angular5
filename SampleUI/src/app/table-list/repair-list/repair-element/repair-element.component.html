@@ -1,0 +1,34 @@
+<section>
+    <div class="row atolltablerow" (click)="onclickToolIdRepair()" [ngStyle]="{'background':backColor}">
+        <div class="col-xs-2">
+            <p>
+                {{repairElement.toolid}}
+            </p>
+        </div>
+        <div class="col-xs-2" >
+            <p>
+                {{repairElement.partnumber}}
+            </p>
+        </div>
+        <div class="col-xs-2" >
+            <p>
+                {{repairElement.nodeid}}
+            </p>
+        </div>
+        <div class="col-xs-2" >
+            <p>
+                {{repairElement.remarks}}
+            </p>
+        </div>
+        <div class="col-xs-2" >
+            <p>
+                {{repairElement.suppliername}}
+            </p>
+        </div>
+        <div class="col-xs-2" >
+            <p>
+                {{timeSpent}}
+            </p>
+        </div>
+    </div>
+</section>

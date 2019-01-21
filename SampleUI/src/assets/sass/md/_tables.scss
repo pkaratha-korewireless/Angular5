@@ -1,0 +1,236 @@
+.table{
+   > thead > tr > th{
+       border-bottom-width: 1px;
+       font-size: $font-size-h6;
+       font-weight: $font-weight-light;
+   }
+
+   .radio,
+   .checkbox{
+       margin-top: 0;
+       margin-bottom: 0;
+       margin-left: 10px;
+       padding: 0;
+       width: 15px;
+
+       .icons{
+           position: relative;
+       }
+   }
+   > thead > tr > th,
+   > tbody > tr > th,
+   > tfoot > tr > th,
+   > thead > tr > td,
+   > tbody > tr > td,
+   > tfoot > tr > td{
+       padding: 12px 8px;
+       vertical-align: middle;
+   }
+
+   > thead > tr > th{
+       padding-bottom: 4px;
+   }
+
+   .td-actions{
+        display: flex;
+
+        .btn{
+           margin: 0px;
+           padding: 5px;
+        }
+    }
+    > tbody > tr{
+        position: relative;
+    }
+}
+
+.atolltablerow{
+    cursor: pointer;
+    font-size: 115%;
+    font-weight: 400;
+    margin-bottom: 0px;
+    min-height: 10vh;
+    border-bottom: .25px solid $gray-lighter;
+    .col-xs-3,.col-xs-2{
+        overflow: hidden;
+    &:hover{
+        
+    }
+    }
+}
+
+.progress{
+    border-radius: 0px;
+    width: 6vw;
+    border: 1px solid #bdbdbd;
+}
+
+.opensidebar{
+    border: 1px solid $gray-lighter;
+    
+    hr{
+        margin:0;
+        color: #23618E!important;
+        height: 2px!important;
+        border-top: 2px solid #23618E;
+    }
+    .sidebarHeader{
+        i{
+            font-size: 2vw;
+            color: #23618E!important;
+            cursor: pointer;
+            vertical-align: middle!important;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        h4{
+            font-weight: 500;
+            color: #23618E;
+        }
+        p{
+            vertical-align: 50%;
+        }
+        h6{
+            display: inline-block;
+            min-width: 10px;
+            padding: 3px 7px;
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+            background-color: #23618E;
+            text-transform: unset;
+        }
+    }
+}
+.sideviewdetails{
+    ::-webkit-scrollbar {
+        width: 1px!important;
+        height: 2em
+    }
+    margin:2vw;
+    label{
+        font-size: .85vw;
+    }
+    h4{
+        font-size: 1vw;
+        margin:0;
+        font-weight: 400;
+    }
+    p{
+        font-size: 1.6vw;
+        font-weight: 400;
+    }
+}
+
+.table-header{
+    background: #9b9b9b;
+    color: white;
+    min-height: 40px;
+    h6{
+        color:white;
+        text-transform: unset;
+        font-weight: 400;
+    }
+}
+
+.atoll-content{
+    margin: 2.5vw 2vw 2.5vw 3vw;
+    h5{
+        font-size: 120%;
+        color: gray;
+        bottom: 0px!important;
+        vertical-align: text-bottom!important;
+    }
+}
+
+.atoll-widget{
+    margin: 1.2vw;
+    margin-top: 0px!important;
+    p{
+        font-size: 7vh;
+        color: $brand-primary;
+        font-weight: 500;
+    }
+    .badge{
+        font-size: 20%;
+    }
+    label{
+        cursor: pointer;
+        font-size: 1.2vw;
+        margin-left: 0px!important;
+        padding: 0px!important;
+    }
+    border-radius: 0;
+    .panel{
+        border-radius: 0px;
+        box-shadow: #bdbdbd;
+        margin-right: 2vw;
+    }
+    .panel-title{
+        font-weight: 500;
+    }
+}
+
+
+.atoll-dashboard{
+    margin: 2.5vw 2vw 2.5vw 3vw;
+    i{
+        vertical-align: middle!important;
+        margin:0px;
+        height: 1.5px;
+        color:#bdbdbd;
+    }
+    .col-xs-1 > i {
+        font-size: 150%;
+        margin: 0px!important;
+        vertical-align: bottom!important;
+        cursor: pointer;
+    }
+    b{
+        margin:0px;
+        font-weight: 600;
+        vertical-align: bottom!important;
+        padding: 0px;
+        font-size: 150%;
+        color: gray;
+    }
+}
+
+.searchbar{
+    background: #9b9b9b;
+}
+.searchbar2{
+    background: #F4F4F4;
+}
+input[type="search"] {
+    -webkit-appearance: searchfield;
+    margin-bottom: 2%;
+    margin-left: 1%;
+   }
+   input[type="search"]::-webkit-search-cancel-button {
+   -webkit-appearance: searchfield-cancel-button;
+   }
+
+.badge{
+    background: #0497C1;
+    font-size: 30%;
+    font-weight: 300;
+    height: 50%;
+    border-radius: 5px!important;
+    vertical-align:top;
+    min-width:50px;
+}
+h5{
+    font-weight: 500;
+    color: black!important;
+    font-size:160%!important;
+    bottom:0px!important;
+}
+.atol_tab{
+    a{
+        p{
+            font-size: 300%!important;
+        }
+    }
+
+}

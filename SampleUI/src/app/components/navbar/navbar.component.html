@@ -1,0 +1,72 @@
+<nav class="navbar navbar-fixed-top" style="left: 82px;">
+    <div class="container-fluid" style="margin:0px!important">
+        <div class="navbar-header navbar-static-top">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" (click)="sidebarToggle()">
+            </button>
+        </div>
+        <form class="navbar-form" role="search">
+            <div class="form-group navbar-left atol-search">
+                <button type="submit">
+                    <i class="material-icons">search</i>
+                    <div class="ripple-container"></div>
+                </button>
+                <input type="text" placeholder="Global Search">
+            </div>
+
+        </form>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right atoll-nav-rigt navatoll">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="../../../assets/img/icons/notification.svg" alt="" height="25vw" width="25vw">
+                        <span class="notification" *ngIf="notificationCount>0">{{notificationCount}}</span>
+                    </a>
+                    <ul class="dropdown-menu notificationheader" *ngIf="notificationCount>0">
+                        <li>
+                            <div class="row title">
+                                <div class="col-xs-10">
+                                    <p>Alerts</p>
+                                </div>
+                                <div class="col-xs-2">
+                                    <i class="material-icons">settings</i>
+                                </div>
+                            </div>
+                            <hr style="margin:0px;">
+                        </li>
+                        <li id='notificationbar' *ngFor="let item of notificationList">
+                            <a (click)="readNotification({type:0,toolid:item.toolid,partnumber:item.partnumber,vendor:item.suppliername,flag0:item.battery_notification,flag1:item.die_missing_notification,flag2:item.die_life_notification,flag3:item.die_removal_notification})"
+                                *ngIf="item.battery_notification =='1'">Battery notification {{item.toolid}} <hr></a>
+                            <a (click)="readNotification({type:1,toolid:item.toolid,partnumber:item.partnumber,vendor:item.suppliername,flag0:item.battery_notification,flag1:item.die_missing_notification,flag2:item.die_life_notification,flag3:item.die_removal_notification})"
+                                *ngIf="item.die_missing_notification =='1'">{{item.toolid}} is Missing<hr></a>
+                            <a (click)="readNotification({type:2,toolid:item.toolid,partnumber:item.partnumber,vendor:item.suppliername,flag0:item.battery_notification,flag1:item.die_missing_notification,flag2:item.die_life_notification,flag3:item.die_removal_notification})"
+                                *ngIf="item.die_life_notification=='1'">Die Life Notification {{item.toolid}}<hr></a>
+                            <a (click)="readNotification({type:3,toolid:item.toolid,partnumber:item.partnumber,vendor:item.suppliername,flag0:item.battery_notification,flag1:item.die_missing_notification,flag2:item.die_life_notification,flag3:item.die_removal_notification})"
+                                *ngIf="item.die_removal_notification=='1'">{{item.toolid}} is removed<hr></a>
+                        </li>
+                        <li>
+                            <hr style="margin:0px;">
+                            <div class="row title">
+                                <a href="#">View All Alerts</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="../../../assets/img/icons/user.svg" alt="" height="25vw" width="25vw">
+                        <label for="username" style="text-transform: capitalize!important;font-size:150%!important;font-weight: 500!important">{{username}}</label>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a>Account Setting</a>
+                        </li>
+                        <li id='user'>
+                            <a (click)="logout()">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

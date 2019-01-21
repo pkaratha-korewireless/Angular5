@@ -1,0 +1,113 @@
+@media (min-width: 992px){
+    .navbar-form {
+        margin-top: 21px;
+        margin-bottom: 21px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .navbar-nav > li > .dropdown-menu,
+    .dropdown .dropdown-menu,
+    .dropdown-menu.bootstrap-datetimepicker-widget{
+        @include transition($fast-transition-time, $transition-linear);
+        margin-top: -20px;
+        visibility: hidden;
+        display: block;
+        @include opacity(0);
+    }
+    .navbar-nav > li.open > .dropdown-menu,
+    .dropdown.open .dropdown-menu,
+    .dropdown-menu.bootstrap-datetimepicker-widget.open{
+        @include opacity(1);
+        visibility: visible;
+        margin-top: 0px;
+
+    }
+
+    /*.navbar-nav > li > .dropdown-menu:before{
+        border-bottom: 11px solid rgba(0, 0, 0, 0.2);
+        border-left: 11px solid rgba(0, 0, 0, 0);
+        border-right: 11px solid rgba(0, 0, 0, 0);
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 12px;
+        top: -11px;
+    }
+    .navbar-nav > li > .dropdown-menu:after {
+        border-bottom: 11px solid #FFFFFF;
+        border-left: 11px solid rgba(0, 0, 0, 0);
+        border-right: 11px solid rgba(0, 0, 0, 0);
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 12px;
+        top: -10px;
+    }*/
+
+    .navbar-nav.navbar-right > li > .dropdown-menu:before{
+        left: auto;
+        right: 12px;
+    }
+
+    .navbar-nav.navbar-right > li > .dropdown-menu:after{
+        left: auto;
+        right: 12px;
+    }
+
+    .footer:not(.footer-big){
+        nav > ul{
+           li:first-child{
+             margin-left: 0;
+           }
+        }
+    }
+
+    body > .navbar-collapse.collapse{
+        display: none !important;
+    }
+
+    .card{
+        form{
+            [class*="col-"]{
+                padding: 6px;
+            }
+            [class*="col-"]:first-child{
+                padding-left: 15px;
+            }
+            [class*="col-"]:last-child{
+                padding-right: 15px;
+            }
+        }
+    }
+
+    .sidebar{
+        .navbar-form{
+            display: none !important;
+        }
+        .nav-mobile-menu{
+            display: none;
+        }
+    }
+}
+//overwrite table responsive for 768px screens
+
+@media (min-width: 768px){
+    .navbar> .container-fluid .navbar-brand{
+        margin-left: 0;
+    }
+}
+@media (min-width: 992px){
+    .table-full-width{
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+.container-fluid-atoll{
+    background: white;
+    margin: .2vw;
+    margin-right: 2vw;
+}
+
+.section-data{
+    margin: 5px;
+}

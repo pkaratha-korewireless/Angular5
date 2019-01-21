@@ -1,0 +1,35 @@
+<section>
+    <div class="row atolltablerow" (click)="onclickToolIdMissing()" [ngStyle]="{'background':backColor}">
+        <div [ngClass]="{'col-xs-2':!globalopenflag,'col-xs-3':globalopenflag}">
+            <p>
+                {{missingElement.toolid}}
+            </p>
+        </div>
+        <div [ngClass]="{'col-xs-2':!globalopenflag,'col-xs-3':globalopenflag}">
+            <p>
+                {{missingElement.partnumber}}
+            </p>
+        </div>
+        <div [ngClass]="{'col-xs-2':!globalopenflag,'col-xs-3':globalopenflag}">
+            <p>
+                {{missingElement.nodeid}}
+            </p>
+        </div>
+        <div class="col-xs-2" *ngIf="!globalopenflag">
+            <p>{{missingElement.count}}/{{missingElement.max_die_life}}</p>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                    <span class="sr-only">{{missingElement.count}} Complete</span>
+                </div>
+            </div>
+        </div>
+        <div [ngClass]="{'col-xs-2':!globalopenflag,'col-xs-3':globalopenflag}">
+            <p>
+                {{missingElement.suppliername}}
+            </p>
+        </div>
+        <div ngClass="col-xs-2" *ngIf="!globalopenflag">
+            <p>{{missingElement.server_datetime}}</p>
+        </div>
+    </div>
+</section>

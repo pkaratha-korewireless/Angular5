@@ -1,0 +1,18 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+ <title/>
+ <desc/>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="note-add" d="m25,25l-3,0l0,-1l3,0l0,-3l1,0l0,3l3,0l0,1l-3,0l0,3l-1,0l0,-3l0,0l0,0zm-4.40029,2l-13.60096,0c-0.5516,0 -0.99875,-0.43861 -0.99875,-0.99875l0,-15.00125l0,0l21,0l0,8.20703c-0.47683,-0.13486 -0.97999,-0.20703 -1.5,-0.20703c-3.03757,0 -5.5,2.46243 -5.5,5.5c0,0.90022 0.21628,1.74993 0.59971,2.5l0,0l0,0zm7.40029,-7.40029l0,-12.59885c0,-1.09923 -0.89582,-2.00086 -2.00086,-2.00086l-18.99828,0c-1.09923,0 -2.00086,0.89582 -2.00086,2.00086l0,18.99828c0,1.09923 0.89582,2.00086 2.00086,2.00086l14.2563,0c1.00879,1.2215 2.5349,2 4.24284,2c3.03757,0 5.5,-2.46243 5.5,-5.5c0,-2.13734 -1.21916,-3.98993 -3,-4.90029l0,0l0,0zm-22,-9.59971l0,-3.00125c0,-0.5516 0.43861,-0.99875 0.99875,-0.99875l19.0025,0c0.5516,0 0.99875,0.43861 0.99875,0.99875l0,3.00125l-21,0l0,0zm19.5,19c2.48528,0 4.5,-2.01472 4.5,-4.5c0,-2.48528 -2.01472,-4.5 -4.5,-4.5c-2.48528,0 -4.5,2.01472 -4.5,4.5c0,2.48528 2.01472,4.5 4.5,4.5l0,0l0,0z"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="13.725015" x2="24.251066" y1="13.657105" x1="8.156394" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_2" y2="16.713055" x2="24.183156" y1="16.645145" x1="8.088484" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="19.769006" x2="21.670485" y1="19.701096" x1="8.020574" stroke-width="1.5" fill="none"/>
+  <line transform="rotate(-1.6922770738601685 25.57530784606959,24.556661605835004) " stroke="#ffffff" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="24.590616" x2="29.412226" y1="24.522706" x1="21.738396" stroke-width="1.5" fill="none"/>
+  <line stroke="#ffffff" transform="rotate(89.01152038574219 25.577098846435547,24.524435043334957) " stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="24.558391" x2="29.51762" y1="24.490481" x1="21.636576" stroke-width="1.5" fill="none"/>
+ </g>
+</svg>

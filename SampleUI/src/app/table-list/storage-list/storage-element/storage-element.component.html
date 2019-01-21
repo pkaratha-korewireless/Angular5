@@ -1,0 +1,29 @@
+<section>
+    <div class="row atolltablerow" (click)="onclickToolIdStorage()" [ngStyle]="{'background':backColor}">
+        <div class="col-xs-2">
+            <p>
+                {{storageElement.toolid}}
+            </p>
+        </div>
+        <div class="col-xs-2">
+            <p>
+                {{storageElement.partnumber}}
+            </p>
+        </div>
+        <div class="col-xs-2">
+            <p>
+                {{storageElement.nodeid}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                {{storageElement.suppliername}}
+            </p>
+        </div>
+        <div class="col-xs-3">
+            <p>
+                {{timeSpent}} Min
+            </p>
+        </div>
+    </div>
+</section>

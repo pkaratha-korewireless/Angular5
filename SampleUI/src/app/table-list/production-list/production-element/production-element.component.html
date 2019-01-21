@@ -1,0 +1,39 @@
+<section>
+    <div class="row atolltablerow" (click)="onclickToolId()" [ngStyle]="{'background':backColor}">
+        <div [ngClass]="{'col-xs-2':!globalopenflag,'col-xs-3':globalopenflag}">
+            <p class="col-xs-9">
+                {{prodElement.toolid}}
+            </p>
+        </div>
+        <div [ngClass]="{'col-xs-2':!globalopenflag,'col-xs-3':globalopenflag}">
+            <p>
+                {{prodElement.partnumber}}
+            </p>
+        </div>
+        <div [ngClass]="{'col-xs-2':!globalopenflag,'col-xs-3':globalopenflag}">
+            <p>
+                {{prodElement.nodeid}}
+            </p>
+        </div>
+        <div class="col-xs-2" *ngIf="!globalopenflag">
+            <p>
+                {{prodElement.count}}/{{prodElement.max_die_life}}
+            </p>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <span class="sr-only">{{prodElement.count}} Complete</span>
+                </div>
+            </div>
+        </div>
+        <div [ngClass]="{'col-xs-2':!globalopenflag,'col-xs-3':globalopenflag}">
+            <p>
+                {{prodElement.suppliername}}
+            </p>
+        </div>
+        <div class="col-xs-2" *ngIf="!globalopenflag">
+            <p>
+                {{prodElement.server_datetime}}
+            </p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,329 @@
+ .wrapper{
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+.bootstrap-navbar {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 81px;
+    display: block;
+    z-index: 1;
+    color: #fff;
+    font-weight: 200;
+    background-size: cover;
+    background-position: center center;
+}
+.sidebar,
+.off-canvas-sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    @include shadow-big();
+
+
+    .sidebar-wrapper{
+        position: relative;
+        height: 100%;
+        overflow: auto;
+        width: 81px;
+        z-index: 4;
+        background-color: #074D80;
+        &:after{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            width: 50%;
+            background: white;
+            background-color: white;
+
+        }
+        i{
+            margin:0px;
+        }
+        
+        
+    }
+    .logo-img{
+        width: 30px;
+        display: inline-block;
+        max-height: 30px;
+        margin-left: 10px;
+        margin-right: 15px;
+
+        img{
+            width: 35px;
+            top: 16px;
+            position: absolute;
+        }
+    }
+
+    .logo-tim{
+        border-radius: 50%;
+        border: 1px solid #333;
+        display: block;
+        height: 61px;
+        width: 61px;
+        float: left;
+        overflow: hidden;
+
+        img{
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+
+
+    .nav{
+        margin-top: 20px;
+        margin-left: 0px;
+        padding: 2px;
+        li{
+            margin-left: 0px!important;
+            padding-left: 0px!important;
+            > a{
+                color: $white-color;
+
+            &:hover > div{
+                background: unset;
+            }
+            }
+
+            &:hover > a{
+                color: $white-color;
+                background: unset;
+            }
+
+            &.active > a{
+                color: $white-color;
+                background: unset;
+                i{
+                    margin: 0px;
+                    color: $white-color;
+                    opacity: 1;
+                }
+                img{
+                    opacity: 1;
+                }
+                p>{
+                    font-size:10px;
+                    opacity: .5;
+                }
+                
+            }
+            &.active{
+                height: 100%;
+            }
+        }
+
+        p{
+            margin: 0;
+            line-height: 30px;
+            font-size: 10px;
+            line-height: 1vw;
+            // font-weight: 600;
+            // text-transform: uppercase;
+        }
+        a{
+            margin-top:20px;
+            >i{
+                font-size: 40px;
+                width: 35px;
+                text-align: center;
+                padding: 0px;
+                opacity: .5;
+                color: #d8d8d8;
+            }
+            img{
+                opacity: .5;
+            }
+            p>{
+                font-size:10px;
+                opacity: .5;
+            }
+        }
+        
+    }
+
+    .sidebar-background{
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        display: block;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center center;
+
+        &:after{
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            content: "";
+            display: block;
+            background: #FFFFFF;
+            opacity: .93;
+        }
+    }
+
+    .logo{
+        position: right;
+        padding: $padding-base $padding-base;
+        z-index: 4;
+        background: white;
+        &:after{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            width: 50%;
+            background: white;
+            background-color: white;
+
+        }
+
+        p{
+            float: left;
+            font-size: 20px;
+            margin: 10px 10px;
+            color: $white-color;
+            line-height: 20px;
+            font-family: "Roboto";
+        }
+
+        .simple-text{
+            text-transform: uppercase;
+            padding: $padding-small-vertical $padding-zero;
+            display: block;
+            font-size: $font-size-large;
+            color: $black-color;
+            text-align: left;
+            font-weight: $font-weight-default;
+            line-height: 30px;
+        }
+    }
+
+    .logo-tim{
+        border-radius: 50%;
+        border: 1px solid #333;
+        display: block;
+        height: 61px;
+        width: 61px;
+        float: left;
+        overflow: hidden;
+
+        img{
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &:after,
+    &:before{
+        display: block;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    &:before{
+        opacity: .33;
+        // background: #000000;
+    }
+
+    &:after{
+    //    @include set-background-color-button($font-background-light-grey, $background-lighter-grey);
+       z-index: 3;
+       opacity: 1;
+    }
+
+    &[data-image]:after,
+    &.has-image:after{
+        opacity: .77;
+    }
+
+    &[data-color="blue"]{
+        @include set-background-color-button($brand-info);
+    }
+    &[data-color="green"]{
+        @include set-background-color-button($brand-success);
+    }
+    &[data-color="orange"]{
+        @include set-background-color-button($brand-warning);
+    }
+    &[data-color="red"]{
+        @include set-background-color-button($brand-danger);
+    }
+    &[data-color="purple"]{
+        @include set-background-color-button($brand-primary);
+    }
+    &[data-color="gray"]{
+        @include set-color-button($black-color);
+    }
+}
+
+.off-canvas-sidebar{
+    .nav {
+        > li > a,
+        > li > a:hover{
+            color: $gray;
+        }
+
+        > li > a:focus{
+            background:gray;
+        }
+    }
+}
+
+
+.main-panel{
+    //background: rgba(203,203,210,.15);
+    position: relative;
+    // z-index: 2;
+    float: right;
+    min-height: 100%;
+    width: $sidebar-width;
+
+    .main-content{
+        margin-top: 70px;
+        padding: 30px 15px;
+        min-height: calc(100% - 123px);
+    }
+    div{
+        .footer{
+            border-top: 1px solid #e7e7e7;
+        }
+    }
+    > .navbar{
+        margin-bottom: 0;
+    }
+}
+.bootstrap-navbar .nav{
+    margin-top: 20px;
+    float: none;
+}
+.main-panel{
+    position: relative;
+    height: 100%;
+}
+.sidebar,
+.main-panel{
+    -webkit-transition-property: top,bottom,width;
+    transition-property: top,bottom,width;
+    -webkit-transition-duration: .2s,.2s,.35s;
+    transition-duration: .2s,.2s,.35s;
+    -webkit-transition-timing-function: linear,linear,ease;
+    transition-timing-function: linear,linear,ease;
+    //-webkit-overflow-scrolling: touch;
+}

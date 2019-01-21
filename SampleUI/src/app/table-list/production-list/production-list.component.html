@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <ng-content></ng-content>
+  <div class="row">
+    <div [ngClass]="{'col-xs-12': opensidebar==true, 'col-xs-6 opensidebar':opensidebar==false}">
+      <div class="row table-header">
+        <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+          <div class="col-xs-9">
+            <h6 class="fs-12">Tool ID </h6>
+          </div>
+        </div>
+        <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+          <h6 class="fs-12">Part Number</h6>
+        </div>
+        <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+          <h6 class="fs-12">Node ID</h6>
+        </div>
+        <div class="col-xs-2" *ngIf="opensidebar">
+          <h6 class="fs-12">Production Status</h6>
+        </div>
+        <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+          <h6 class="fs-12">Vendor Name</h6>
+        </div>
+        <div class="col-xs-2" *ngIf="opensidebar">
+          <h6 class="fs-12">Date</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div id="searchprod" class="collapse searchbar2">
+          <div class="row">
+            <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+              <input class="col-xs-12" type="search" id="prodtoolId" (input)="onSearchChangeToolId($event.target.value)">
+            </div>
+            <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+              <input class="col-xs-12" type="search" id="prodpartnumber" (input)="onSearchChangePartNumber($event.target.value)">
+            </div>
+            <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+              <input class="col-xs-12" type="search" id="prodnodeId" (input)="onSearchChangeNodeId($event.target.value)">
+            </div>
+            <div class="col-xs-2" *ngIf="opensidebar">
+              <input class="col-xs-12" type="search" id="prodStatus" (input)="onSearchChangeStatus($event.target.value)">
+            </div>
+            <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+              <input class="col-xs-12" type="search" id="prodvendorName" (input)="onSearchChangevendorName($event.target.value)">
+            </div>
+            <div class="col-xs-2" *ngIf="opensidebar">
+              <input class="col-xs-12" type="date" id="prodDate" (input)="onSearchChangeDate($event.target.value)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-production-element (toolIdClicked)="openSideWindow($event)" *ngFor="let item of updatedprodList" [prodElement]="item"
+        [backColor]="(toolId == item.toolid) && !opensidebar ? '#f7f7f7':'white'" [globalopenflag]="openSidebarGlobal">
+      </app-production-element>
+    </div>
+    <div class="col-xs-6 opensidebar" *ngIf="!opensidebar">
+      <div class="row sidebarHeader">
+        <div class="col-xs-1">
+          <i class="material-icons" (click)="closeSideWindow()">
+            clear
+          </i>
+        </div>
+        <div class="col-xs-4">
+          <h4> Die {{toolId}}
+          </h4>
+        </div>
+        <div class="col-xs-6">
+          <h6>In Production</h6>
+        </div>
+        <div class="col-xs-1">
+          <i class="material-icons" (click)="closeSideWindow()">
+            arrow_downward
+          </i>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <app-die-details [detailElement]="sendDieDetails" [selectedPeriod] = "selectodPeriod" [flagSidebaropen]="openSidebarGlobal"></app-die-details>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <ng-content></ng-content>
+  <div class="row">
+    <div [ngClass]="{'col-xs-12': opensidebar==true, 'col-xs-6 opensidebar':opensidebar==false}">
+      <div class="row table-header">
+        <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+          <h6 class="fs-12">Tool ID </h6>
+        </div>
+        <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+          <h6 class="fs-12">Part Number</h6>
+        </div>
+        <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+          <h6 class="fs-12">Node ID</h6>
+        </div>
+        <div class="col-xs-2" *ngIf="opensidebar">
+          <h6 class="fs-12">Production Status</h6>
+        </div>
+        <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+          <h6 class="fs-12">Vendor Name</h6>
+        </div>
+        <div class="col-xs-2" *ngIf="opensidebar">
+          <h6 class="fs-12">Last Seen</h6>
+        </div>
+      </div>
+      <div class="row">
+        <div id="searchunassigned" class="collapse searchbar2">
+          <div class="row">
+            <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+              <input class="col-xs-12" type="search" id="unassignedtoolId" (input)="onSearchChangeToolId($event.target.value)">
+            </div>
+            <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+              <input class="col-xs-12" type="search" id="unassignedpartnumber" (input)="onSearchChangePartNumber($event.target.value)">
+            </div>
+            <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+              <input class="col-xs-12" type="search" id="unassignednodeId" (input)="onSearchChangeNodeId($event.target.value)">
+            </div>
+            <div class="col-xs-2" *ngIf="opensidebar">
+              <input class="col-xs-12" type="search" id="unassignedStatus" (input)="onSearchChangeStatus($event.target.value)">
+            </div>
+            <div [ngClass]="{'col-xs-2':opensidebar,'col-xs-3':!opensidebar}">
+              <input class="col-xs-12" type="search" id="unassignedvendorName" (input)="onSearchChangevendorName($event.target.value)">
+            </div>
+            <div class="col-xs-2" *ngIf="opensidebar">
+              <input class="col-xs-12" type="date" id="unassignedDate" (input)="onSearchChangeDate($event.target.value)">
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-unassigned-element *ngFor="let item of updatedunassignedList" (toolIdClickedunassigned)="openSideWindow($event)" [unassignedElement]="item"
+        [backColor]="(toolId == item.toolid) && !opensidebar ? '#f7f7f7':'white'" [globalopenflag]="openSidebarGlobal">
+      </app-unassigned-element>
+    </div>
+    <div class="col-xs-6 opensidebar" *ngIf="!opensidebar">
+      <div class="row sidebarHeader">
+        <div class="col-xs-1">
+          <i class="material-icons" (click)="closeSideWindow()">
+            clear
+          </i>
+        </div>
+        <div class="col-xs-4">
+          <h4> Die {{toolId}}
+          </h4>
+        </div>
+        <div class="col-xs-6">
+          <h6>In unassigned</h6>
+        </div>
+        <div class="col-xs-1">
+          <i class="material-icons" (click)="closeSideWindow()">
+            arrow_downward
+          </i>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <app-die-details [detailElement]="sendDieDetails" [selectedPeriod] = "selectodPeriod" [flagSidebaropen]="openSidebarGlobal"></app-die-details>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="container-fluid sideviewdetails" style="overflow:scroll; height:720px;">
+  <div class="row">
+    <div class="container-fluid">
+      <div class="row">
+        <h4>Details</h4>
+      </div>
+      <div class="row">
+        <div class="col-xs-4" >
+          <div class="row">
+            <label>Press Count</label>
+          </div>
+          <div class="row" style="margin-bottom: 0px;">
+            <p style="margin-bottom: 0px;">{{detailElement.count}}</p>
+          </div>
+          <div class="row" style="margin-top: 0px;">
+            <label style="font-style: italic;margin-top: 0px;font-size: 75%">Limit : {{detailElement.maxCount}}</label>
+          </div>
+        </div>
+        <div class="col-xs-4" >
+          <div class="row">
+            <label>Related Part</label>
+          </div>
+          <div class="row">
+            <p  >{{detailElement.relatedPart}}</p>
+          </div>
+        </div>
+        <div class="col-xs-4" >
+          <div class="row">
+            <label>Meantime between Failure</label>
+          </div>
+          <div class="row">
+            <p  >{{detailElement.failureDTime}} Min</p>
+          </div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-xs-4" >
+          <div class="row">
+            <label>Quality</label>
+          </div>
+          <div class="row">
+            <p  >{{detailElement.quality}}</p>
+          </div>
+        </div>
+        <div class="col-xs-4" >
+            <div class="row">
+              <label>Failure Downtime</label>
+            </div>
+            <div class="row">
+              <p>{{detailElement.failureDTime}} Min</p>
+            </div>
+          </div>
+          <div class="col-xs-4" >
+              <div class="row">
+                <label >Battery Life</label>
+              </div>
+              <div class="row">
+                <p>{{detailElement.battery}}%</p>
+              </div>
+            </div>
+      </div><br>
+      <div class="row">
+        <div class="col-xs-4" >
+          <div class="row">
+            <label>Production Status</label>
+          </div>
+          <div class="row">
+            <p  >{{getBarPercent()}}</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                  <span class="sr-only">{{detailElement.count}} Complete</span>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container-fluid">
+      <label>Production Tend Graph</label>
+      <div [chart]="chart"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container-fluid">
+      <label>Location</label>
+      <div id="map" style="height:250px;width: auto;margin-top:2%"></div>
+    </div>
+  </div>
+</div>
